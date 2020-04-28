@@ -1,4 +1,4 @@
-# Tribe Local Plugin Updater
+# Tribe Dirty Little Local Plugin Updater
 
 This is an unofficial dirty little script to automate some borings parts of updating your local development Modern Tribe plugins to the latest version. It basically:
 
