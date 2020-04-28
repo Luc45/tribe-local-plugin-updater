@@ -1,6 +1,6 @@
 # Tribe Local Plugin Updater
 
-This is an unofficial little script to automate some borings parts of updating your local development Modern Tribe plugins to the latest version. It basically does this:
+This is an unofficial dirty little script to automate some borings parts of updating your local development Modern Tribe plugins to the latest version. It basically:
 
 - Stash whatever changes you have
 - Git checkout master
