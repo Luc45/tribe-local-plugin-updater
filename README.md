@@ -2,7 +2,7 @@
 
 This is an unofficial little script to automate some borings parts of updating your local development Modern Tribe plugins to the latest version. It basically does this:
 
-- Stash whathever changes you have
+- Stash whatever changes you have
 - Git checkout master
 - Git pull
 - NVM Use 8.9.4
