@@ -5,7 +5,7 @@ This is an unofficial little script to automate some borings parts of updating y
 - Stash whatever changes you have
 - Git checkout master
 - Git pull
-- NVM Use 8.9.4
+- NVM Use 8.9.4, if NVM is installed
 - composer install
 - npm install
 - npm run build
