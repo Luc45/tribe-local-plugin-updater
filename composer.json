@@ -1,0 +1,6 @@
+{
+    "name": "root/updater",
+    "require": {
+        "symfony/process": "^3.0"
+    }
+}
