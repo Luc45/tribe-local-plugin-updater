@@ -13,14 +13,15 @@ This is an unofficial little script to automate some borings parts of updating y
 
 On all of these folders:
 
+- event-tickets/common
+- the-events-calendar/common
+- the-events-calendar
+- events-pro
 - event-tickets
 - event-tickets-plus
 - events-community
 - events-community-tickets
 - events-filterbar
-- events-pro
-- event-tickets/common
-- the-events-calendar/common
 
 ### Requirements
 - NVM (https://github.com/nvm-sh/nvm), or a node version that is compatible with what the plugin uses (eg: node 8.9.4)
