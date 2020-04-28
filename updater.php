@@ -10,14 +10,15 @@ use Exception;
 require_once( "vendor/autoload.php" );
 
 $folders_to_update = [
+	'event-tickets/common',
+	'the-events-calendar/common',
+	'the-events-calendar',
+	'events-pro',
 	'event-tickets',
 	'event-tickets-plus',
 	'events-community',
 	'events-community-tickets',
 	'events-filterbar',
-	'events-pro',
-	'event-tickets/common',
-	'the-events-calendar/common',
 ];
 
 $start = microtime( true );
