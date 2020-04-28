@@ -3,6 +3,7 @@
 namespace Updater;
 
 use Symfony\Component\Process\Process;
+use Jack\Symfony\ProcessManager;
 use RuntimeException;
 use Exception;
 
@@ -18,6 +19,8 @@ $folders_to_update = [
 	'event-tickets/common',
 	'the-events-calendar/common',
 ];
+
+$start = microtime( true );
 
 foreach ( $folders_to_update as $folder_to_update ) {
 	// (ノ°▽°)ノ
@@ -35,12 +38,18 @@ foreach ( $folders_to_update as $folder_to_update ) {
 		if ( $folder_to_update !== "events-filterbar" ) {
 			$folder_to_update->npm_build();
 		}
-		$folder_to_update->apply_stash();
+		$folder_to_update->pop_stash();
 	} catch ( Exception $e ) {
 		echo $e->getMessage();
 		continue;
 	}
 }
+
+$end = microtime( true );
+
+$seconds_to_run = $end - $start;
+
+echo "\033[31;7mCompleted in $seconds_to_run seconds. Review the output for any errors.\e[0m" . PHP_EOL;
 
 class Folder_To_Update {
 	private $path;
@@ -85,20 +94,14 @@ class Folder_To_Update {
 		$npm_install = new Process( 'npm install' );
 		$npm_install->setWorkingDirectory( $this->path );
 
+		$proc_mgr               = new ProcessManager();
+		$max_parallel_processes = 5;
+		$polling_interval       = 1000; // microseconds
+		$processes              = [ $npm_install, $composer_install ];
+
 		try {
-			$this->print_in_red_background( "composer install" );
-			$composer_install->start();
-
-			$this->print_in_red_background( "npm install" );
-			$npm_install->start();
-
-			$this->print_in_red_background( "composer install 2" );
-			$composer_install->wait( function ( $type, $buffer ) {
-				echo $buffer;
-			} );
-
-			$this->print_in_red_background( "npm install 2" );
-			$npm_install->wait( function ( $type, $buffer ) {
+			$this->print_in_red_background( "npm install && composer install in parallel" );
+			$proc_mgr->runParallel( $processes, $max_parallel_processes, $polling_interval, function ( $type, $buffer ) {
 				echo $buffer;
 			} );
 		} catch ( Exception $e ) {
@@ -133,10 +136,10 @@ class Folder_To_Update {
 		);
 	}
 
-	public function apply_stash() {
+	public function pop_stash() {
 		$this->run_sync(
-			'Apply stash',
-			'git stash apply{0}'
+			'Pop stash',
+			'git stash pop --quiet'
 		);
 	}
 

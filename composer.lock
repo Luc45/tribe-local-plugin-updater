@@ -4,8 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f8116ddf5c51c68e6a6a7b9ca9d35ec",
+    "content-hash": "9969b98930c2c51dc38c057e0dcdaf95",
     "packages": [
+        {
+            "name": "kissifrot/symfony-parallel-process",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kissifrot/symfony-parallel-process.git",
+                "reference": "e32b1a5d6b8dd77d2ed6f289ed1be08a27e966a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kissifrot/symfony-parallel-process/zipball/e32b1a5d6b8dd77d2ed6f289ed1be08a27e966a4",
+                "reference": "e32b1a5d6b8dd77d2ed6f289ed1be08a27e966a4",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/process": "^3.4 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jack\\Symfony\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jack",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Oliver Eglseder",
+                    "email": "php@vxvr.de",
+                    "homepage": "http://vxvr.de",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Philippe Villiers",
+                    "email": "kissifrot+gh@gmail.com",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Simple wrapper to enable parallel processing using Symfony Process component",
+            "homepage": "https://github.com/kissifrot/symfony-parallel-process",
+            "keywords": [
+                "parallel",
+                "parallel processing",
+                "process",
+                "symfony"
+            ],
+            "time": "2020-02-21T17:05:14+00:00"
+        },
         {
             "name": "symfony/process",
             "version": "v3.4.39",
