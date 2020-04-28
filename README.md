@@ -1,0 +1,1 @@
+# tribe-local-plugin-updater
