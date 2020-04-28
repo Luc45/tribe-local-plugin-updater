@@ -27,10 +27,11 @@ On all of these folders:
 - A local environment that has all of the Modern Tribe plugins listed above installed from Github 
 
 ### How to use this
-- cd to your your-main-site/wp-content/plugins
-- Clone this repo in a subfolder, as if it were just another plugin
+- cd into your plugins folder `cd your-main-site/wp-content/plugins`
+- clone this repo in a subfolder, as if it were just another plugin
+- run `composer install`
 - run `php updater.php`
-- Grab a cup of coffee while it runs
+- grab a cup of coffee while it runs
 
 ```
    ( (
