@@ -8,8 +8,8 @@ This is an unofficial little script to automate some borings parts of updating y
 - NVM Use 8.9.4
 - composer install
 - npm install
-- npm build
-- Apply the stash back again
+- npm run build
+- Pop the stash back again
 
 On all of these folders:
 
