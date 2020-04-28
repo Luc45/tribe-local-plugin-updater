@@ -5,7 +5,7 @@ This is an unofficial little script to automate some borings parts of updating y
 - Stash whatever changes you have
 - Git checkout master
 - Git pull
-- NVM Use 8.9.4
+- NVM Use 8.9.4, if NVM is installed
 - composer install
 - npm install
 - npm run build
@@ -23,7 +23,7 @@ On all of these folders:
 - the-events-calendar/common
 
 ### Requirements
-- NVM (https://github.com/nvm-sh/nvm)
+- NVM (https://github.com/nvm-sh/nvm), or a node version that is compatible with what the plugin uses (eg: node 8.9.4)
 - A local environment that has all of the Modern Tribe plugins listed above installed from Github 
 
 ### How to use this
