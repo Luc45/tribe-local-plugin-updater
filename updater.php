@@ -118,16 +118,19 @@ class Folder_To_Update {
 
 		// Print the command being executed in a red background.
 		$this->print_in_red_background( "Checking if NVM is available..." );
-		$nvm_check->run( function ( $type, $buffer ) use ( $version ) {
-			if ( $buffer !== "nvm" ) {
-				throw new RuntimeException( "NVM is not available." );
-			}
+		$nvm_check->run();
 
-			$this->run_sync(
-				"NVM Use Version $version",
-				"nvm use $version"
-			);
-		} );
+		if ( $nvm_check->getOutput() !== "nvm" ) {
+			// NVM is not available.
+			$this->print_in_red_background( "NVM is not available. NPM will use whatever node version is installed." );
+
+			return;
+		}
+
+		$this->run_sync(
+			"NVM Use Version $version",
+			"nvm use $version"
+		);
 	}
 
 	public function npm_build() {
